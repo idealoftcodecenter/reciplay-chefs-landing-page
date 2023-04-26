@@ -1,0 +1,32 @@
+{
+  "name": "reciplay-marketing-page",
+  "version": "1.0.0",
+  "description": "Single page website build for Reciplay Marketing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "node-sass -w scss -o ./public_html/css --output-style compressed --source-map-embed true",
+    "serve": "http-server ./public_html -i",
+    "start": "concurrently --kill-others \"npm run watch\" \"npm run serve\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idealoftcodecenter/reciplay-marketing-page.git"
+  },
+  "keywords": [
+    "Reciplay marketing page april 2023"
+  ],
+  "author": "Nishi, Sundar, Hrishikesh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/idealoftcodecenter/reciplay-marketing-page.git/issues"
+  },
+  "homepage": "https://github.com/idealoftcodecenter/reciplay-marketing-page.git#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "node-sass": "^8.0.0",
+    "concurrently": "^7.2.1"
+  }
+}

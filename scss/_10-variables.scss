@@ -1,0 +1,56 @@
+@mixin uiTransition1 {
+    -webkit-transition: all .15s ease;
+    -moz-transition: all .15s ease;
+    -ms-transition: all .15s ease;
+    -o-transition: all .15s ease;
+    transition: all .15s ease;
+}
+
+@mixin uiTransition2 {
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+
+@mixin Filter($filter) {
+    -webkit-filter: $filter;
+    -moz-filter: $filter;
+    -ms-filter: $filter;
+    -o-filter: $filter;
+    filter: $filter;
+}
+
+@mixin textShadow($shadow) {
+    -webkit-text-shadow: $shadow;
+    -moz-text-shadow: $shadow;
+    -o-text-shadow: $shadow;
+    -ms-text-shadow: $shadow;
+    text-shadow: $shadow;
+}
+
+@mixin transformAnim ($anim) {
+    -webkit-transform: $anim;
+    -moz-transform: $anim;
+    -o-transform: $anim;
+    -ms-transform: $anim;
+    transform: $anim;
+}
+
+@mixin borderRadius ($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -o-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin boxShadow ($shadow) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    -o-box-shadow: $shadow;
+    -ms-box-shadow: $shadow;
+    box-shadow: $shadow;
+}

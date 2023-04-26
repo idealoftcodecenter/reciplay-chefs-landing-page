@@ -1,0 +1,67 @@
+.our-principal nav li a {
+    color: #fff;
+}
+
+.our-principal .content {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    padding-top: 3rem;
+}
+.our-principal .content .container-custom-content, .our-principal .content .container-custom-content > .row {
+    min-height: 100vh;
+    height: auto;
+}
+
+.our-principal .dropdown {
+    background: rgba(255,255,255,.3);
+}
+
+.general-formulations-logo {
+    display: inline-block;
+    height: 6rem;
+    margin-bottom: 2.8rem;
+}
+
+.our-principal .content {
+    background: #fff url(img/crumpled-paper-bg.jpg) left top no-repeat;
+    background-size: cover;
+}
+.our-principal .content p {
+    color: #808080;
+    font-size: 1.8rem;
+    margin-bottom: 2.4rem;
+}
+
+.our-principal .content .page-footer p {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    margin: 10rem 0 0;
+    color: #000;
+    text-align: center;
+    font-size: 1.4rem;
+    opacity: .5;
+}
+
+@media (min-width: 576px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .our-principal .content p {
+        font-size: 2rem;
+    }
+    .our-principal nav li a {
+        color: #777;
+    }
+    .our-principal .content {
+        padding-top: 1rem;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}

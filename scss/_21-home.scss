@@ -1,0 +1,103 @@
+.home .main-nav li a {
+    color: #fff;
+}
+.home nav.main-nav,
+.home .mobile-nav-toggle {
+    background: rgba(0,0,0,.7);
+}
+
+.home .full-page-bg {
+    // background: #000 url('./img/home-bg.jpg') center center no-repeat;
+    // background-size: cover;
+    overflow: hidden;
+}
+#gradient-canvas {
+    width: 100%;
+    height: 100%;
+}
+.home .content {
+    width: 100%;
+    height: 100%;
+}
+.home .content .container, .home .content .container > .row {
+    height: 100%;
+}
+.home .phi-logo-big {
+    display: inline-block;
+    height: 18vh;
+}
+.home .subtitle {
+    color: #f8edba;
+    font-size: 2.2rem;
+    margin-top: 20px;
+}
+.home-logo-big {
+    position: relative;
+    display: inline-block;
+}
+span.ion-volume-high {
+    color: #fff;
+    opacity: .7;
+    font-size: 3.8rem;
+    position: absolute;
+    right: -6%;
+    top: -10%;
+    @include textShadow(0 2px 3px rgba(0,0,0,.25));
+    @include transformAnim(scale(1));
+    @include uiTransition1;
+    cursor: pointer;
+}
+span.ion-volume-high:hover {
+    @include textShadow(0 5px 3px rgba(0,0,0,.15));
+    @include transformAnim(scale(1.1));
+}
+span.ion-volume-high:active {
+    @include transformAnim(scale(.8));
+}
+
+canvas.gradient-transitions {
+    width: 100%;
+    height: 100%;
+}
+
+
+.home .page-footer p {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    margin: 10rem 0 0;
+    color: #fff;
+    text-align: center;
+    font-size: 1.4rem;
+    opacity: .5;
+}
+
+@media (min-width: 576px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .home .phi-logo-big {
+        height: 18vh;
+    }
+    .home .subtitle {
+        font-size: 2.6rem;
+    }
+    .home nav.main-nav,
+    .home .mobile-nav-toggle {
+        background: none;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .home .phi-logo-big {
+        height: 22vh;
+    }
+    .home .subtitle {
+        font-size: 2.4rem;
+    }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}

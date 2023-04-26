@@ -1,0 +1,259 @@
+.products .dropdown {
+    background: rgba(0,0,0,.3);
+}
+.products nav li a {
+    color: #fff;
+}
+
+.products h1 {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    color: #221e1f;
+    font-weight: 300;
+    font-weight: 600;
+}
+.products .content {
+    background: #fff url(img/crumpled-paper-bg.jpg) left top no-repeat;
+    background-size: cover;
+    padding-top: 12rem;
+    padding-bottom: 4rem;
+}
+.products .content .page-footer {
+    position: static;
+}
+
+.products .content, .products .content > .container-custom, .products .content > .container-custom > .row {
+    height: auto;
+}
+
+.products-3 .content {
+    // padding-top: 0;
+    min-height: 100vh;
+    height: auto;
+}
+.products-3 .product-box {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.products-3 .container-custom {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.product-link {
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 7px;
+    color: #000;
+    padding: 2px 4px;
+    @include borderRadius(4px);
+    @include uiTransition1;
+    background: rgba(255,255,255,0);
+}
+.svg-wrap {
+    position: relative;
+}
+svg#Layer_1 {
+    margin-top: 3rem;
+}
+.product-link.reset {
+    display: inline-block;
+    padding: 5px 15px;
+    position: absolute;
+    left: 30px;
+    top: 6.4rem;
+    background: #6c757d;
+    color: #fff;
+    @include boxShadow(0 1px 3px rgba(0,0,0,.2));
+}
+.btn.gallery {
+    position: absolute;
+    left: 12rem;
+    top: 6.4rem;
+    height: 3.6rem;
+    line-height: 3.2rem;
+    padding: 0 2rem;
+    color: #fff;
+    background: #ed8b4b;
+    font-size: 1.6rem;
+    @include uiTransition2;
+    @include boxShadow(0 1px 3px rgba(0,0,0,.2));
+    display: none;
+}
+.btn.gallery.orange {
+    background: #ed8b4b;
+}
+.btn.gallery.maroon {
+    background: #921c36;
+}
+.btn.gallery.blue {
+    background: #00125b;
+}
+.btn.gallery:hover, .product-link.reset  {
+    @include transformAnim(scale(1.1));
+    @include boxShadow(0 3px 5px rgba(0,0,0,.1));
+
+}
+.btn.gallery.active {
+    display: inline-block;
+}
+.product-link.reset:hover {
+    background: darken(#6c757d, .2);
+}
+.product-link.active {
+    background: #fff;
+}
+.product-link:hover {
+    background: rgba(255,255,255,.8);
+}
+.product-link .small {
+    display: block;
+    font-size: 0.75em;
+    margin-left: 2.4rem;
+    color: #333;
+}
+.product-link .product-num {
+    display: inline-block;
+    background: #fbb040;
+    width: 2.2rem;
+    height: 2.2rem;
+    text-align: center;
+    line-height: 2.1rem;
+    color: #000;
+    font-size: .8em;
+    padding: 1px 1px 0 0;
+    @include borderRadius(1rem);
+}
+
+.product-name {
+    margin-left: 5px;
+}
+
+.transit-link-block .product-name {
+    color: #ed8b4b;
+}
+.fleet-link-block .product-name {
+    color: #921c36;
+}
+
+.section-title {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-top: 3rem;
+    padding-bottom: 1rem;
+    // border-bottom: 1px solid #000;
+}
+.transit-link-block .section-title {
+    border-bottom: 1px solid #ed8b4b;
+}
+
+.fleet-link-block .section-title {
+    color: #921c36;
+    border-bottom: 1px solid #921c36;
+}
+
+.outdoor-signage-links-block .section-title {
+    border-bottom: 1px solid #00125b;
+}
+
+svg#Layer_1 path, svg#Layer_1 rect, svg#Layer_1 circle, svg#Layer_1 text, svg#Layer_1 polygon {
+    transition:all .3s ease-in-out;
+    -webkit-transition:all .3s ease-in-out;
+    -moz-transition:all .3s ease-in-out;
+    -ms-transition:all .3s ease-in-out;
+    -o-transition:all .3s ease-in-out;
+}
+svg#Layer_1 .inactive {
+    fill: #ddd;
+    stroke: #aaa;
+}
+
+svg#Layer_1 .big {
+    transform: scale(1.5);
+}
+#svg-bg {
+    opacity: 0;
+}
+.products .page-footer p {
+    margin-bottom: 1.5rem;
+}
+
+.video-wrap {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    @include uiTransition1;
+}
+.video-wrap:after {
+    display: block;
+    content: '\f362';
+    font-family: 'Ionicons';
+    position: absolute;
+    color: #fff;
+    font-size: 8rem;
+    left: 50%;
+    top: 50%;
+    margin-left: -4rem;
+    margin-top: -6rem;
+    z-index: 2;
+    @include uiTransition1;
+}
+.product-box {
+    overflow: hidden;
+    width: 100%;
+    display: block;
+}
+.product-box, .product-box img {
+    @include uiTransition1;
+}
+.product-box:hover img {
+    @include transformAnim(scale(1.2));
+}
+
+.video-wrap:hover:after {
+    @include transformAnim(scale(1.2));
+}
+
+@media (min-width: 576px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .products nav li a {
+        color: #777;
+    }
+    .products .dropdown {
+        background: rgba(255,255,255,1);
+    }
+    .products .content, .products .content > .container-custom, .products .content > .container-custom > .row {
+        // height: 100%;
+    }
+    .products .content > footer {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+    .products-3 .content .page-footer {
+        position: absolute;
+    }
+    .products-3 .content {
+        padding-top: 0;
+    }
+    .products-3 .content > .container-custom, 
+    .products-3 .content > .container-custom > .row {
+        height: auto;
+        min-height: 100vh;
+    }
+    .products-3 .product-box {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
