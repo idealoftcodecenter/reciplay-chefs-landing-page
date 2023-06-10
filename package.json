@@ -1,27 +1,27 @@
 {
-  "name": "reciplay-marketing-page",
+  "name": "reciplay-chefs-landing-page",
   "version": "1.0.0",
-  "description": "Single page website build for Reciplay Marketing",
+  "description": "Single page website build for Reciplay chef's landing page",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "node-sass -w scss -o ./public_html/css --output-style compressed --source-map-embed true",
-    "serve": "http-server ./public_html -i",
+    "watch": "node-sass -w scss -o ./build/css --output-style compressed --source-map-embed true",
+    "serve": "http-server ./build -i",
     "start": "concurrently --kill-others \"npm run watch\" \"npm run serve\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/idealoftcodecenter/reciplay-marketing-page.git"
+    "url": "git+https://github.com/idealoftcodecenter/reciplay-chefs-landing-page.git"
   },
   "keywords": [
-    "Reciplay marketing page april 2023"
+    "Reciplay Chef's landing page May 2023"
   ],
   "author": "Nishi, Sundar, Hrishikesh",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/idealoftcodecenter/reciplay-marketing-page.git/issues"
+    "url": "https://github.com/idealoftcodecenter/reciplay-chefs-landing-page.git/issues"
   },
-  "homepage": "https://github.com/idealoftcodecenter/reciplay-marketing-page.git#readme",
+  "homepage": "https://github.com/idealoftcodecenter/reciplay-chefs-landing-page.git#readme",
   "dependencies": {
   },
   "devDependencies": {
