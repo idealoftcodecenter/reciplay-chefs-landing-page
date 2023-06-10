@@ -1,0 +1,13 @@
+.modal-content {
+    @include borderRadius(24px);
+    padding: 20px;
+}
+.modal-header, .modal-footer {
+    border: none;
+}
+.modal-footer {
+    margin-top: 30px;
+}
+.close {
+    @include uiTransition1;
+}

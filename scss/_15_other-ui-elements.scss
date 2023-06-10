@@ -1,0 +1,113 @@
+.image-tray {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.image-tray .img-wrapper img {
+    width: calc(100% + 28px);
+    margin-left: -14px;
+}
+.image-tray .overlay {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 50%;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1d1c20+0,1d1c20+100&0+0,0.9+100 */
+    background: -moz-linear-gradient(top,  rgba(29,28,32,0) 0%, rgba(29,28,32,0.9) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(29,28,32,0) 0%,rgba(29,28,32,0.9) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(29,28,32,0) 0%,rgba(29,28,32,0.9) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001d1c20', endColorstr='#e61d1c20',GradientType=0 ); /* IE6-9 */
+}
+.image-tray .overlay .content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 15% 15px;
+}
+
+
+
+// =================================================== a tip by chef
+.tip .top, .tip .text {
+    background: #EBEEF1;
+}
+.tip .text {
+    padding: 15px 18px;
+}
+.tip .text {
+    @include borderRadius(0 16px 16px 16px);
+}
+.tip .top {
+    display: inline-block;
+    @include borderRadius(20px 20px 20px 0);
+}
+.tip .top .icon {
+    background: #fff;
+    @include borderRadius(50%);
+    padding: 5px;
+}
+.tip .top .icon img {
+    width: 32px;
+    height: 32px;
+}
+.tip .top .chef {
+    background: #fff;
+    @include borderRadius(0 20px 20px 20px);
+}
+.tip .top .chef .left {
+    padding-right: 8px;
+}
+.tip .top .chef .right {
+    padding-left: 0;
+}
+
+
+// =================================================== bordered-boxes
+.bordered-boxes {
+    border-top: 1px solid #FED0CE;
+    border-bottom: 1px solid #FED0CE;
+}
+
+
+.bordered-boxes.static {
+    display: table;
+    width: 100%;
+}
+.bordered-boxes.static .left,
+.bordered-boxes.static .middle,
+.bordered-boxes.static .right {
+    display: table-cell;
+}
+
+.bordered-boxes.static .left,
+.bordered-boxes .right {
+    width: 20px;
+}
+.bordered-boxes.static .left {
+    border-right: 1px solid #FED0CE;
+}
+.bordered-boxes.static .right {
+    border-left: 1px solid #FED0CE;
+}
+
+.bordered-boxes.static .row2 {
+    padding: 15px;
+}
+.bordered-boxes.static .row2:first-child {
+    border-bottom: 1px solid #FED0CE;
+}
+.bordered-boxes.static .row2 .row.with-icon {
+    width: 90%;
+    margin-left: 5%;
+}
+
+
+
+.slide-image-text .img-wrapper {
+    margin-bottom: 14px;
+}
+.slide-image-text h2 {
+    margin-bottom: 5px;
+}

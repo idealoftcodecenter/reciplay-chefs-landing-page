@@ -1,0 +1,100 @@
+html,
+body {
+    font-family: $primaryFont;
+    font-size: 62.5%;
+    line-height: 1.4em;
+    font-weight: 400;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+}
+h1.normal, h2.normal, h3.normal, h4.normal, h5.normal {
+    font-weight: 400;
+}
+h1, h2, h3, h4 h5, p {
+    margin: 0;
+}
+
+h1 {
+    font-size: 20px;
+    line-height: 1.3em;
+}
+h1.small {
+    font-size: 16px;
+}
+h1.big {
+    font-size: 24px;
+}
+h2 {
+    font-size: 18px;
+    line-height: 1.2em;
+}
+h3 {
+    font-size: 18px;
+    line-height: 1.1em;
+    font-weight: 600;
+}
+h4 {
+    font-size: 16px;
+    font-weight: 700;
+}
+h5 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #352A16;
+}
+p, figcaption {
+    font-size: 12px;
+    line-height: 1.4em;
+}
+.small {
+    font-size: 0.7em;
+}
+.thin {
+    font-weight: 400;
+}
+.bold {
+    font-weight: 800;
+}
+.block {
+    display: block;
+}
+@media screen and (max-width: 375px) {
+    h1 {
+        font-size: 20px;
+        line-height: 1.3em;
+    }
+    h2 {
+        font-size: 20px;
+        line-height: 1.4em;
+    }
+    h3 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    h4 {
+        font-size: 14px;
+        font-weight: 700;
+    }
+    h5 {
+        font-size: 12px;
+        font-weight: 700;
+        color: #352A16;
+    }
+    p {
+        font-size: 14px;
+        line-height: 1.4em;
+    }
+}
+@media screen and (min-width: 375px) {
+    html {
+        font-size: 56%;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    html {
+        font-size: 62.5%;
+    }
+}

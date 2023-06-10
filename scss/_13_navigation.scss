@@ -1,0 +1,28 @@
+nav {
+    background: transparent;
+    padding: 10px 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+nav .logo {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+}
+nav .logo img {
+    display: inline-block;
+    width: 100%;
+}
+
+nav .icon:first-child {
+    margin-top: 20px;
+}
+
+
+@media (min-width: 1200px) {
+    nav {
+        padding: 15px 4%;
+    }
+}

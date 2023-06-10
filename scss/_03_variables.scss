@@ -1,0 +1,116 @@
+//================================================== COLORS
+$primaryColor: #F8130A;
+$secondaryColor: #F2ECE2;
+$ternaryColor: #9F7B3C;
+
+$grey1: #434343;
+
+$textColor: #263238;
+$textColorGrey: #434343;
+$linkColor: #F8130A;
+
+$successColor: #4cd964;
+$errorColor: #ff3b30;
+$infoColor: #34aadc;
+
+@mixin gradient1 {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fedbda+0,fedbda+100&1+0,0+100 */
+    background: -moz-linear-gradient(top,  rgba(243,234,228,1) 0%, rgba(185,198,217,0) 50%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(243,234,228,1) 0%,rgba(185,198,217,0) 50%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(243,234,228,1) 0%,rgba(185,198,217,0) 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fedbda', endColorstr='#00fedbda',GradientType=0 ); /* IE6-9 */
+}
+@mixin gradient2 {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fff3f2+0,fed7d5+100 */
+    background: rgb(255,243,242); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(255,243,242,1) 0%, rgba(254,215,213,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(255,243,242,1) 0%,rgba(254,215,213,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(255,243,242,1) 0%,rgba(254,215,213,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff3f2', endColorstr='#fed7d5',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin secondaryGradient {
+    background: rgb(30,87,153); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(30,87,153,1) 0%, rgba(125,185,232,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(125,185,232,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(30,87,153,1) 0%,rgba(125,185,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin ternaryGradient {
+    background: rgb(30,87,153); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(30,87,153,1) 0%, rgba(125,185,232,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(125,185,232,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(30,87,153,1) 0%,rgba(125,185,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin gradinet4 {
+    background: rgb(30,87,153); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(30,87,153,1) 0%, rgba(125,185,232,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(125,185,232,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(30,87,153,1) 0%,rgba(125,185,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin gradient5 {
+    background: rgb(30,87,153); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(30,87,153,1) 0%, rgba(125,185,232,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(125,185,232,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(30,87,153,1) 0%,rgba(125,185,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+}
+
+
+//================================================== FONT SETTINGS
+$primaryFont: 'Inter', 'Helvetica Neue', Helvetica, Arial, Sans-serif;
+
+
+//================================================== OTHER VARIABLES
+$radius1: 4px;
+$radius2: 6px;
+$radius10: 10px;
+$radius20: 20px;
+$radius25p: 25%;
+
+
+//================================================== OTHER MIXINS
+@mixin Filter($filter) {
+    -webkit-filter: $filter;
+    -moz-filter: $filter;
+    -ms-filter: $filter;
+    -o-filter: $filter;
+    filter: $filter;
+}
+
+@mixin textShadow($shadow) {
+    -webkit-text-shadow: $shadow;
+    -moz-text-shadow: $shadow;
+    -o-text-shadow: $shadow;
+    -ms-text-shadow: $shadow;
+    text-shadow: $shadow;
+}
+
+@mixin Transform ($anim) {
+    -webkit-transform: $anim;
+    -moz-transform: $anim;
+    -o-transform: $anim;
+    -ms-transform: $anim;
+    transform: $anim;
+}
+
+@mixin borderRadius ($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -o-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin boxShadow ($shadow) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    -o-box-shadow: $shadow;
+    -ms-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
