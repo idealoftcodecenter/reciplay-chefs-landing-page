@@ -64,14 +64,15 @@ jQuery("document").ready(function ($) {
         var src = "https://s3.ap-south-1.amazonaws.com/reciplay/recipe/" + cookbook[0]._id + "/" + cookbook[0].dishInfo.dishImage.path;
         var title = cookbook[0].dishInfo.dishName;
         var description = cookbook[0].dishInfo.dishDesc;
+        var href = "https://alpha-dev.reciplay.in/detail/" + cookbook[0]._mappingId + "?sharing=true";
         var template = `<div class="swiper-slide">
-            <article class="slide-image-text">
+            <a href="${href}" class="slide-image-text">
                 <div class="img-wrapper rounded-16">
                     <img src="${src}" alt="" />
                 </div>
                 <h2>${title}</h2>
                 <p>${description}</p>
-            </article>
+            </a>
         </div>`;
         latestCreationSwiper.appendSlide(template);
         if (index == rcb.length - 1) {
@@ -87,16 +88,17 @@ jQuery("document").ready(function ($) {
         for (i = 0; i < rcb.length; i++) {
             var cookbook = recipes[rcb[i]];
             var recipe = cookbook[generateRandom(cookbook.length)];
-            var src = "https://s3.ap-south-1.amazonaws.com/reciplay/recipe/" + recipe._id + "/" + recipe.dishInfo.dishImage.path;
+            var src = "https://s3.ap-south-1.amazonaws.com/reciplay/recipe/" + rcb[i] + "/" + recipe.dishInfo.dishImage.path;
             var title = recipe.dishInfo.dishName;
-            var template = `<div class="cookbook rounded-16 aos-init aos-animate" data-aos="fade-up" data-aos-dealy="50" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
+            var url = "https://alpha-dev.reciplay.in/cookbook/" + cookbook._id + "?sharing=true";
+            var template = `<a href="${url}" class="cookbook rounded-16 aos-init aos-animate" data-aos="fade-up" data-aos-dealy="50" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
                 <figure class="grid-item">
                     <div class="img-wrapper">
                         <img src="${src}" alt="">
                     </div>
                     <figcaption>${title}</figcaption>
                 </figure>
-            </div>`;
+            </a>`;
             $indianCookbooks.append(template);
         }
         var masonry = document.querySelector("#indian-cookbooks");
@@ -112,14 +114,15 @@ jQuery("document").ready(function ($) {
         var randomRecipe = generateRandom(cookbook.length);
         var src = "https://s3.ap-south-1.amazonaws.com/reciplay/recipe/" + cookbook[randomRecipe]._id + "/" + cookbook[randomRecipe].dishInfo.dishImage.path;
         var title = cookbook[randomRecipe].dishInfo.dishName;
-        var template = `<div class="cookbook rounded-16 aos-init aos-animate" data-aos="fade-up" data-aos-dealy="50">
+        var url = "https://alpha-dev.reciplay.in/cookbook/" + rcb[i] + "?sharing=true";
+        var template = `<a href="${url}" class="cookbook rounded-16 aos-init aos-animate" data-aos="fade-up" data-aos-dealy="50">
             <figure class="grid-item">
                 <div class="img-wrapper">
                     <img src="${src}" alt="">
                 </div>
                 <figcaption>${title}</figcaption>
             </figure>
-        </div>`;
+        </a>`;
         $indianCookbooks.append(template);
         // $("#indian-cookbooks").masonry({
         //     // options...
@@ -134,7 +137,8 @@ jQuery("document").ready(function ($) {
         var src = "https://s3.ap-south-1.amazonaws.com/reciplay/recipe/" + cookbook[1]._id + "/" + cookbook[1].dishInfo.dishImage.path;
         var title = cookbook[1].dishInfo.dishName;
         var description = cookbook[1].dishInfo.dishDesc;
-        var template = `<div class="swiper-slide">
+        var href = "https://alpha-dev.reciplay.in/detail/" + cookbook[0]._mappingId + "?sharing=true";
+        var template = `<a href="${href}" class="swiper-slide">
             <article class="slide-image-text">
                 <div class="img-wrapper rounded-16">
                     <img src="${src}" alt="" />
@@ -142,7 +146,7 @@ jQuery("document").ready(function ($) {
                 <h2>${title}</h2>
                 <p>${description}</p>
             </article>
-        </div>`;
+        </a>`;
         recipeSwiper.appendSlide(template);
         if (index == rcb.length - 1) {
             recipeSwiper.enabled = true;
@@ -154,10 +158,11 @@ jQuery("document").ready(function ($) {
         }
         var title = cookbook.name;
         var kitchen = cookbook.entity.name;
-        var src = "https://s3.ap-south-1.amazonaws.com" + "/reciplay" + "/cookbook/" + cookbook._id + "/" + cookbook.media[0].path;
+        var src = "https://s3.ap-south-1.amazonaws.com" + "/reciplay/cookbook/" + cookbook._id + "/" + cookbook.media[0].path;
+        var url = "https://alpha-dev.reciplay.in/cookbook/" + cookbook._id + "?sharing=true";
         // var title = cookbook[1].dishInfo.dishName;
         // var description = cookbook[1].dishInfo.dishDesc;
-        var template = `<div class="swiper-slide">
+        var template = `<a href="${url}" class="swiper-slide">
             <div class="cookbook-bg">
                 <div class="bb-overlay-left"></div>
                 <div class="bb-overlay-right"></div>
@@ -169,7 +174,7 @@ jQuery("document").ready(function ($) {
                     <img alt="" src="${src}">
                 </div>
             </div>
-        </div>`;
+        </a>`;
         cookbookSwiper.appendSlide(template);
         if (index == rcb.length - 1) {
             cookbookSwiper.enabled = true;
