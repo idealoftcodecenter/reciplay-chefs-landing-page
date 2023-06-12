@@ -162,19 +162,23 @@ jQuery("document").ready(function ($) {
         var url = "https://alpha-dev.reciplay.in/cookbook/" + cookbook._id + "?sharing=true";
         // var title = cookbook[1].dishInfo.dishName;
         // var description = cookbook[1].dishInfo.dishDesc;
-        var template = `<a href="${url}" class="swiper-slide">
-            <div class="cookbook-bg">
-                <div class="bb-overlay-left"></div>
-                <div class="bb-overlay-right"></div>
-                <div class="cover-text">
-                    <span id="" class="title">${title}</span>
-                    <span id="" class="chef">By ${kitchen}</span>
+        var template = `<div class="swiper-slide">
+            <a href="${url}">
+                <div class="cookbook-bg">
+                    <div class="bb-overlay-left"></div>
+                    <div class="bb-overlay-right"></div>
+                    <div class="cover-text">
+                        <span id="" class="title">${title}<br><span class="chef">By ${kitchen}</span></span>
+                    </div>
+                    <div class="cover-image">
+                        <img alt="" src="${src}">
+                    </div>
+                    <div class="bottom">
+                        <img src="img/reciplay-logo-white.svg" class="reciplay-logo" /><img src="img/sticker.png" class="sticker" />
+                    </div>
                 </div>
-                <div class="cover-image">
-                    <img alt="" src="${src}">
-                </div>
-            </div>
-        </a>`;
+            </a>
+        </div>`;
         cookbookSwiper.appendSlide(template);
         if (index == rcb.length - 1) {
             cookbookSwiper.enabled = true;
@@ -191,24 +195,38 @@ jQuery("document").ready(function ($) {
         var title = cookbook[0].dishInfo.dishName;
         var description = cookbook[0].dishInfo.dishDesc;
         var url = "https://alpha-dev.reciplay.in/detail/" + cookbook[0]._mappingId + "?sharing=true";
-        var template = `<div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 3" style="margin-right: 24px;">
-            <article class="slide-image-text">
-                <div class="img-wrapper rounded-16">
-                    <img src="${src}" alt="">
+        var num = index + 1;
+        var template = `<div class="swiper-slide">
+            <a href="${url}" class="fav-card">
+                <div class="imgbox">
+                    <img src="${src}" alt="" class="imgclip" />
+                    <h1 class="card_number">${num}</h1>
                 </div>
-                <div class="row">
-                    <div class="col-9">
-                        <h2>${title}</h2>
-                        <p>${description}</p>
-                    </div>
-                    <div class="col-3">
-                        <a href="${url}" class="btn hollow full-rounded icon-42">
-                            <span class="arrow upright"></span>
-                        </a>
-                    </div>
+                <div class="card_info">
+                    <h2>Maharashtrian (IN) &nbsp; <img class="card_countryimg" src="${src}" alt="" /></h2>
+                    <h1>${title}</h1>
+                    <p>${description}</p>
                 </div>
-            </article>
+            </a>
         </div>`;
+        // var template = `<div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 3" style="margin-right: 24px;">
+        //     <article class="slide-image-text">
+        //         <div class="img-wrapper rounded-16">
+        //             <img src="${src}" alt="">
+        //         </div>
+        //         <div class="row">
+        //             <div class="col-9">
+        //                 <h2>${title}</h2>
+        //                 <p>${description}</p>
+        //             </div>
+        //             <div class="col-3">
+        //                 <a href="${url}" class="btn hollow full-rounded icon-42">
+        //                     <span class="arrow upright"></span>
+        //                 </a>
+        //             </div>
+        //         </div>
+        //     </article>
+        // </div>`;
         favouritesSwiper.appendSlide(template);
         if (index == rcb.length - 1) {
             favouritesSwiper.enabled = true;
