@@ -27,27 +27,27 @@ jQuery("document").ready(function ($) {
             type: "GET", // http method
             success: function (data) {
                 if (data.data) {
-                    var cbData = data.data;
                     cookbooks.push(data.data);
                     cookbooksSet = true;
-                    // ================================================== GET ALL THE RECIPES
-                    $.ajax(callToRecipes, {
-                        type: "GET", // http method
-                        success: function (data) {
-                            if (data.data) {
-                                recipes[cb] = data.data;
-                                setLatestCreation(data.data, i);
-                                setIndianCookbooks(data.data, i);
-                                setRecipesInCNB(data.data, i);
-                                setCookbooksInCNB(cbData, i);
-                                // setShareCookbook();
-                                setAllTimeFavs(data.data, i);
-                            }
-                        },
-                        error: function (jqXhr, textStatus, errorMessage) {
-                            console.log("Error" + errorMessage);
-                        },
-                    });
+                }
+            },
+            error: function (jqXhr, textStatus, errorMessage) {
+                console.log("Error" + errorMessage);
+            },
+        });
+
+        // ================================================== GET ALL THE RECIPES
+        $.ajax(callToRecipes, {
+            type: "GET", // http method
+            success: function (data) {
+                if (data.data) {
+                    recipes[cb] = data.data;
+                    setLatestCreation(data.data, i);
+                    setIndianCookbooks(data.data, i);
+                    setRecipesInCNB(data.data, i);
+                    // setCookbooksInCNB(data.data, i);
+                    // setShareCookbook();
+                    setAllTimeFavs(data.data, i);
                 }
             },
             error: function (jqXhr, textStatus, errorMessage) {
@@ -79,6 +79,7 @@ jQuery("document").ready(function ($) {
             latestCreationSwiper.enabled = true;
         }
     }
+
     var $indianCookbooks = $("#indian-cookbooks");
     var $shuffleBtn = $("#shuffle-btn");
     $shuffleBtn.on("click", updateIndianCookbooks);
@@ -88,7 +89,7 @@ jQuery("document").ready(function ($) {
         for (i = 0; i < rcb.length; i++) {
             var cookbook = recipes[rcb[i]];
             var recipe = cookbook[generateRandom(cookbook.length)];
-            var src = "https://s3.ap-south-1.amazonaws.com/reciplay/recipe/" + rcb[i] + "/" + recipe.dishInfo.dishImage.path;
+            var src = "https://s3.ap-south-1.amazonaws.com/reciplay/recipe/" + recipe._id + "/" + recipe.dishInfo.dishImage.path;
             var title = recipe.dishInfo.dishName;
             var url = "https://alpha-dev.reciplay.in/cookbook/" + cookbook._id + "?sharing=true";
             var template = `<a href="${url}" class="cookbook rounded-16 aos-init aos-animate" data-aos="fade-up" data-aos-dealy="50" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
@@ -186,6 +187,7 @@ jQuery("document").ready(function ($) {
     }
     function setShareCookbook() {}
     function setAllTimeFavs(cookbook, index) {
+        console.log(index);
         console.log(cookbook[0]);
         var $swiper = $("#favourites-swiper");
         if (index == 0) {
@@ -248,10 +250,10 @@ jQuery("document").ready(function ($) {
     var latestCreationSwiper = new Swiper(".latest-creation-swiper", {
         slidesPerView: "auto",
         spaceBetween: 24,
-        speed: 1000,
-        autoplay: {
-            delay: 1200,
-        },
+        // speed: 1000,
+        // autoplay: {
+        //     delay: 1200,
+        // },
         centeredSlides: true,
         enabled: false,
     });
@@ -281,11 +283,11 @@ jQuery("document").ready(function ($) {
     var favouritesSwiper = new Swiper(".favourites-swiper", {
         slidesPerView: "auto",
         spaceBetween: 24,
-        speed: 1000,
-        // loop: true,
-        autoplay: {
-            delay: 1200,
-        },
+        // speed: 1000,
+        // // loop: true,
+        // autoplay: {
+        //     delay: 1200,
+        // },
         centeredSlides: true,
     });
 
