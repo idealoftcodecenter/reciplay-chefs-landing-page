@@ -29,6 +29,7 @@ jQuery("document").ready(function ($) {
                 if (data.data) {
                     cookbooks.push(data.data);
                     cookbooksSet = true;
+                    setCookbooksInCNB(data.data, i);
                 }
             },
             error: function (jqXhr, textStatus, errorMessage) {
@@ -45,7 +46,6 @@ jQuery("document").ready(function ($) {
                     setLatestCreation(data.data, i);
                     setIndianCookbooks(data.data, i);
                     setRecipesInCNB(data.data, i);
-                    // setCookbooksInCNB(data.data, i);
                     // setShareCookbook();
                     setAllTimeFavs(data.data, i);
                 }
@@ -57,29 +57,41 @@ jQuery("document").ready(function ($) {
     });
 
     function setLatestCreation(cookbook, index) {
+        console.log(cookbook);
         var $swiper = $("#latest-creation-swiper");
         if (index == 0) {
             latestCreationSwiper.removeAllSlides();
         }
-        var src = "https://s3.ap-south-1.amazonaws.com/reciplay/recipe/" + cookbook[0]._id + "/" + cookbook[0].dishInfo.dishImage.path;
-        var title = cookbook[0].dishInfo.dishName;
-        var description = cookbook[0].dishInfo.dishDesc;
-        var href = "https://alpha-dev.reciplay.in/detail/" + cookbook[0]._mappingId + "?sharing=true";
+        var recipe = cookbook[0];
+        var videoLink = recipe.recipeInfo.videoUrl;
+        var playerId = "player-" + index;
+        //bTqVqk7FSmY
         var template = `<div class="swiper-slide">
-            <a href="${href}" class="slide-image-text">
-                <div class="img-wrapper rounded-16">
-                    <img src="${src}" alt="" />
-                </div>
-                <h2>${title}</h2>
-                <p>${description}</p>
-            </a>
+            <div id="${playerId}" class="js-player" data-plyr-provider="youtube" data-plyr-embed-id="${videoLink}"></div>
         </div>`;
+
+        // var src = "https://s3.ap-south-1.amazonaws.com/reciplay/recipe/" + cookbook[0]._id + "/" + cookbook[0].dishInfo.dishImage.path;
+        // var title = cookbook[0].dishInfo.dishName;
+        // var description = cookbook[0].dishInfo.dishDesc;
+        // var href = "https://alpha-dev.reciplay.in/detail/" + cookbook[0]._mappingId + "?sharing=true";
+        // var template = `<div class="swiper-slide">
+        //     <a href="${href}" class="slide-image-text">
+        //         <div class="img-wrapper rounded-16">
+        //             <img src="${src}" alt="" />
+        //         </div>
+        //         <h2>${title}</h2>
+        //         <p>${description}</p>
+        //     </a>
+        // </div>`;
         latestCreationSwiper.appendSlide(template);
         if (index == rcb.length - 1) {
+            var players = Plyr.setup(".js-player");
+            players.map(function (player, ii) {
+                player.forward(recipe.dishIntro.media.startTime);
+            });
             latestCreationSwiper.enabled = true;
         }
     }
-
     var $indianCookbooks = $("#indian-cookbooks");
     var $shuffleBtn = $("#shuffle-btn");
     $shuffleBtn.on("click", updateIndianCookbooks);
@@ -187,8 +199,6 @@ jQuery("document").ready(function ($) {
     }
     function setShareCookbook() {}
     function setAllTimeFavs(cookbook, index) {
-        console.log(index);
-        console.log(cookbook[0]);
         var $swiper = $("#favourites-swiper");
         if (index == 0) {
             favouritesSwiper.removeAllSlides();
@@ -307,12 +317,10 @@ jQuery("document").ready(function ($) {
         containment: "parent",
         stop: function (event, ui) {
             if (ui.position.left < 150) {
-                // console.log("Didnt pull enough");
                 $(".swipe-handle").css("left", "2px");
                 // $(".unlockedArea").css("opacity", "0");
                 $(this).closest(".swipe-box").find("span.text").css("opacity", 1);
             } else {
-                // console.log("Unlocked");
                 // $(".unlockedArea").css("opacity", "1");
                 $(".swipe-handle").css("left", width - 44);
             }
